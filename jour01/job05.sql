@@ -1,4 +1,4 @@
-mysql> INSERT INTO etudiant (nom, prenom, email)
+INSERT INTO etudiant (nom, prenom, email)
     -> VALUES
     ->   ('Spaghetti', 'Betty', 'betty.Spaghetti@laplateforme.io'),
     ->   ('Steak', 'Chuck', 'chuck.steak@laplateforme.io'),
