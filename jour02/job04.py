@@ -1,15 +1,15 @@
 import mysql.connector
 
-# Connexion à la base de données
-conn = mysql.connector.connect(
+# Connection à la base de données
+database = mysql.connector.connect(
     host="localhost",
-    user="votre_utilisateur",
-    password="votre_mot_de_passe",
-    database="votre_base_de_donnees"
+    user="root",
+    password="root",
+    database="LaPlateforme"
 )
 
-# Création d'un curseur pour exécuter des requêtes SQL
-cursor = conn.cursor()
+# Création d'un curseur pour exécuter la requête SQL
+cursor = database.cursor()
 
 # Requête pour récupérer les noms et les capacités de la table "salle"
 query = "SELECT nom, capacite FROM salle"
@@ -18,13 +18,13 @@ query = "SELECT nom, capacite FROM salle"
 cursor.execute(query)
 
 # Récupération des résultats
-resultats = cursor.fetchall()
+results = cursor.fetchall()
 
 # Affichage des résultats en console
-for resultat in resultats:
-    nom, capacite = resultat
-    print(f"Nom de la salle : {nom}, Capacité : {capacite}")
+for result in results:
+    name, capacity = result
+    print(f"Nom de la salle : {name}, Capacité : {capacity}")
 
-# Fermeture du curseur et de la connexion
+# Fermeture du curseur et de la base de donnée
 cursor.close()
-conn.close()
+database.close()
